@@ -48,8 +48,8 @@ ul li {
     width: 300px;
 }
 .grid-item:hover {
-    animation: shake .6s;
-    width: 305px;
+    animation: shake .1s;
+    width: 312px;
 }
 .grid-item h5 {
     background-color:transparent;
