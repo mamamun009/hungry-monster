@@ -1,5 +1,6 @@
 //search btn
 document.getElementById('search').addEventListener('click', () => {
+    document.getElementById('infoDiv').style.display = 'none';
     document.getElementById('mainDiv').innerHTML = "";
     // document.getElementById('recommend').style.display = 'none';
     // document.getElementById('searchDiv').style.display = 'block';
@@ -11,44 +12,40 @@ document.getElementById('search').addEventListener('click', () => {
                 const eachData = data.meals[i];
                 const mainDiv = document.getElementById('mainDiv');
                 const subDiv = document.createElement('div');
-                subDiv.setAttribute('class', 'grid-item');
-                const divElements = `<img src="${eachData.strMealThumb}">
-                                    <h5>${eachData.strMeal}</h5>`
+                const divElements = `<div onclick="clickOnDiv(${i},'${foodName}')" class="grid-item">
+                                    <img src="${eachData.strMealThumb}">
+                                    <h5>${eachData.strMeal}</h5></div>`
                 subDiv.innerHTML = divElements;
                 mainDiv.appendChild(subDiv);
                 // console.log(subDiv);
             }
-            const div = document.getElementById('mainDiv');
-            console.log(div[2]);
-            div.addEventListener('click',() =>{
-                const click = event.target.innerText;
-                console.log(click);
-            })
-            
-            let addInfo = (id) => {
-                document.getElementById('ul').innerHTML = "";
-                for (let i = 1; i < 13; i++) {
-                    const li = document.createElement('li');
-                    const fData = data.meals[id]
-                    li.innerText = fData['strIngredient' + i];
-                    document.getElementById('ul').appendChild(li);
-                    console.log(li.innerText);
-                }
-            }
+
         })
 })
-// document.getElementById('mealDiv1').addEventListener('click', () => {
-//     document.getElementById('infoDiv').style.display = 'block';
-//     document.getElementById('ul').innerHTML = "";
-//     for (let i = 1; i < 13; i++) {
-//         const li = document.createElement('li');
-//         li.innerText = item['strIngredient' + i];
-//         document.getElementById('ul').appendChild(li);
-//     }
-//     document.getElementById('headTitle').innerText = data.meals[id].strMeal;
-//     document.getElementById('recipe').innerText = data.meals[id].strInstructions;
-
-// })
+let clickOnDiv = (id,foodName) => {
+    document.getElementById('infoDiv').style.display = 'block';
+    window.scrollTo(0, 150);
+    document.getElementById('ul').innerHTML = "";
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`)
+        .then(response => response.json())
+        .then(data => {
+            recipeData = data.meals[0];
+            for (let i = 1; i < 15; i++) {
+                let ingredients = recipeData['strIngredient' + i];
+                if(!(ingredients==null || ingredients =='')){
+                const li = document.createElement('li');
+                li.innerText = ingredients;
+                document.getElementById('ul').appendChild(li);
+                }
+            }
+            document.getElementById('headTitle').innerText = data.meals[id].strMeal;
+            document.getElementById('recipe').innerText = data.meals[id].strInstructions;
+        })
+    }
+    document.getElementById('hideDetails').addEventListener('click', () =>{
+        document.getElementById('infoDiv').style.display = 'none';
+        window.scrollTo(0, 0);
+    })
     //display ingredients, instruction and meal title on click on meal div
 // let addIngrid = (data, id) => {
 

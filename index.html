@@ -14,32 +14,37 @@
     <div class="container">
         <form class="col-md-6 m-auto py-5">
             <div class="input-group mb-3">
-                <input id="foodName" type="text" class="form-control" placeholder="Enter a meal name ..">
+                <input id="foodName" type="text" class="form-control" placeholder="Enter a meal name" value="">
                 <div class="input-group-append">
                     <button id="search" type="button" class="btn btn-danger">Search</button>
                 </div>
             </div>
         </form>
     </div>
-    <div id="infoDiv" style="display: block;">
-        <h1 id="headTitle" style="color: white;text-align: center;">Lorem ipsum dolor sit amet.</h1>
+    <div id="infoDiv" style="display: none;">
+        <h1 id="headTitle" style="color: black;font-size:60px; text-align: center;">Lorem ipsum dolor sit amet.</h1>
         <div class="row ">
             <div id="ingredientsDiv" class="col m-5" style="display: block;">
+                <h2 style="color:white;">Ingredients:</h2>
                 <ul id="ul" class="mt-overflow-auto">
-                    <h2 style="color:white;">Ingredients:</h2>
                 </ul>
             </div>
             <div id="recepeDiv" class="col m-5" style="display: block;">
                 <h2 style="color:white;">Instruction:</h2>
-                <p id="recipe">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit consequatur praesentium molestiae itaque eaque aut culpa quasi nobis? Nulla, reiciendis harum a repellat magnam dignissimos deserunt culpa nesciunt. Consequatur delectus commodi
+                <p id="recipe">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit consequatur praesentium
+                    molestiae itaque eaque aut culpa quasi nobis? Nulla, reiciendis harum a repellat magnam dignissimos
+                    deserunt culpa nesciunt. Consequatur delectus commodi
                     architecto placeat, neque reiciendis!
                 </p>
             </div>
         </div>
+        <div class="d-flex justify-content-center">
+            <button id="hideDetails" class="btn btn-success mb-5">Hide Details</button>
+        </div>
     </div>
     <div class="container">
         <div class="grid-container" id="mainDiv">
-            
+
         </div>
     </div>
     <script src="script.js "></script>
