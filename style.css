@@ -99,3 +99,12 @@ ul li {
     width: 100%;
     border-radius: 5%;
 }
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto ;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        margin-left: 20%;
+    }
+}
