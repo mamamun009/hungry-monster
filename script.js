@@ -1,9 +1,8 @@
-let foodName = " ";
 //search btn
 document.getElementById('search').addEventListener('click', () => {
     document.getElementById('infoDiv').style.display = 'none';
     document.getElementById('mainDiv').innerHTML = "";
-    foodName = document.getElementById('foodName').value;
+    const foodName = document.getElementById('foodName').value;
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`)
         .then(response => response.json())
         .then(data => {
