@@ -48,7 +48,7 @@ ul li {
     width: 300px;
 }
 .grid-item:hover {
-    animation: shake .1s;
+    animation: shake .5s;
     width: 312px;
 }
 .grid-item h5 {
