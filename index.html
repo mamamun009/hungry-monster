@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="container">
-        <nav class="navbar m-2 bg-secondary rounded justify-content-between">
+        <nav  class="navbar m-2 bg-secondary rounded justify-content-between">
             <a class="navbar-brand">Hungry Monster</a>
             <form class="form-inline">
               <input id="foodName" class="form-control mr-sm-2" type="search" placeholder="Enter a meal name" aria-label="Search">
@@ -44,11 +42,11 @@
         </div>
     </div>
     <div class="container">
+        <h1 id="resultContainer" style="color: white; text-align: center; display: none; background-color: grey; width: 100%;" class="rounded"> <span id="result">0</span> matching result:</h1>
         <div class="grid-container" id="mainDiv">
 
         </div>
     </div>
     <script src="script.js "></script>
 </body>
-
 </html>

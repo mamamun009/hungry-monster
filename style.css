@@ -12,6 +12,8 @@ body {
     opacity: 0.7;
     border-radius: 5%;
     align-items: center;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 #recepeDiv h2 {
@@ -39,13 +41,12 @@ ul li {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
 }
 
 .grid-item {
     text-align: bottom;
     width: 300px;
+    margin:5%;
 }
 .grid-item:hover {
     animation: shake .5s;
@@ -85,6 +86,7 @@ ul li {
     margin: auto;
     margin-top: 2%;
     width: 25%;
+    border-radius: 30px;
 }
 #error img{
     width: 50%;
@@ -102,9 +104,17 @@ ul li {
 @media only screen and (max-width: 600px) {
     .grid-container {
         display: grid;
-        grid-template-columns: auto ;
-        grid-column-gap: 50px;
-        grid-row-gap: 50px;
-        margin-left: 20%;
+        grid-template-columns: auto auto ;
+        grid-column-gap: 2%;
+        grid-row-gap: 1%;
+
     }
+    .grid-item {
+        text-align: bottom;
+        width: 150px;
+
+    }
+}
+html{
+    scroll-behavior: smooth;
 }
